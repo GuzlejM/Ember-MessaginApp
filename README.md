@@ -22,3 +22,18 @@ app/
       username.hbs
 
 To REFERENCE this NESTED files we need to use SYNTAX of ::
+//     folder   :: file
+<ReceivedMessage::Avatar>
+//     folder   ::  file
+<ReceivedMessage::Username>
+
+---------------------------------------------------------------------------
+
+5. received-message/avatar and sent-message/avatar files are almost the same. Only thing they have different it's content. To make it more REUSABLE way:
+  1. Make avatar.hbs in the components FOLDER with 
+    <aside ...attributes>
+      <div class="avatar" title={{@title}}>{{@initial}}</div>
+    </aside>
+  2. Call that component with <Avatar> tag in the file we want to use it
+  3. Assign <Avatar @title="Some title" @initial="T">
+We will make this attribues and content of DIV dynamic by {{@initial}}
